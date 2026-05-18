@@ -1,0 +1,3 @@
+import { Component } from '@angular/core';import { CommonModule } from '@angular/common';import { RouterLink } from '@angular/router';
+@Component({standalone:true,imports:[CommonModule,RouterLink],template:`<nav><a routerLink='/admin'>Admin</a><a routerLink='/admin/users'>Users</a><a routerLink='/admin/feedback'>Feedback</a><a routerLink='/admin/sales'>Sales</a></nav><div class='container'><div class='card'><h3>Sales Summary</h3><div class='grid'><div class='card'><h4>Total Bills</h4><p>120</p></div><div class='card'><h4>Revenue</h4><p>₹4,50,000</p></div></div></div></div>`})
+export class AdminSalesComponent{}

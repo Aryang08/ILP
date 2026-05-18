@@ -25,6 +25,13 @@ public class AuthController {
         return loginBO.login(userId, password);
     }
 
+
+    @GetMapping("/session/validate")
+    public LoginResponse validateSession(@RequestHeader("sessionId") String sessionId) {
+        var session = sessionManager.getSession(sessionId);
+        return new LoginResponse(sessionId, session.getRole());
+    }
+
     //  LOGOUT (UNCHANGED)
     @PostMapping("/logout")
     public String logout(@RequestHeader("sessionId") String sessionId) {
