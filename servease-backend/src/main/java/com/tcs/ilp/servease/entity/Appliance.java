@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Appliance {
 
     @Id
+    @Column(name = "appliance_id")
     private String applianceId;
 
     private String customerId;
@@ -17,6 +18,10 @@ public class Appliance {
     private LocalDate purchaseDate;
     private String warrantyStatus;
     private LocalDate installationDate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private EntityStatus status = EntityStatus.ACTIVE;
 
     public Appliance() {}
 
@@ -31,6 +36,7 @@ public class Appliance {
         this.purchaseDate = purchaseDate;
         this.warrantyStatus = warrantyStatus;
         this.installationDate = installationDate;
+        this.status = EntityStatus.ACTIVE;
     }
 
     // ✅ GETTERS
@@ -99,5 +105,6 @@ public class Appliance {
 
     public void setInstallationDate(LocalDate installationDate) {
         this.installationDate = installationDate;
+        this.status = EntityStatus.ACTIVE;
     }
 }

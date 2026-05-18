@@ -1,0 +1,3 @@
+import { Component } from '@angular/core';import { CommonModule } from '@angular/common';import { HttpClient } from '@angular/common/http';import { environment } from '../../../environments/environment';
+@Component({standalone:true,imports:[CommonModule],template:`<div class='container'><div class='card'><h3>User Management</h3><button (click)='load()'>Refresh Users</button><table><tr><th>ID</th><th>Role</th></tr><tr *ngFor='let u of users'><td>{{u.userId}}</td><td>{{u.role}}</td></tr></table></div></div>`})
+export class AdminUsersComponent{users:any[]=[];constructor(private http:HttpClient){} load(){this.http.get<any[]>(`${environment.apiUrl}/user`).subscribe(r=>this.users=r);}}

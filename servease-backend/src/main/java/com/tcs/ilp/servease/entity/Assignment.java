@@ -33,7 +33,8 @@ public class Assignment {
     private LocalDateTime completedAt;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private AssignmentStatus status;
 
     // =========================
     // CONSTRUCTORS
@@ -43,7 +44,7 @@ public class Assignment {
 
     public Assignment(String assignmentId, String serviceId,
                       String technicianId, String serviceCenterId,
-                      LocalDateTime completedAt, String status) {
+                      LocalDateTime completedAt, AssignmentStatus status) {
         this.assignmentId = assignmentId;
         this.serviceId = serviceId;
         this.technicianId = technicianId;
@@ -95,11 +96,11 @@ public class Assignment {
         this.completedAt = completedAt;
     }
 
-    public String getStatus() {
+    public AssignmentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AssignmentStatus status) {
         this.status = status;
     }
 }

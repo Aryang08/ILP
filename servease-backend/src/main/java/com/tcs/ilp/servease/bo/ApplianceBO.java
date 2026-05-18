@@ -9,6 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tcs.ilp.servease.dto.ApplianceDTO;
 import com.tcs.ilp.servease.entity.Appliance;
+import com.tcs.ilp.servease.entity.EntityStatus;
+import com.tcs.ilp.servease.entity.ServiceStatus;
+import com.tcs.ilp.servease.entity.AssignmentStatus;
 import com.tcs.ilp.servease.exception.ApplianceExceptions.*;
 import com.tcs.ilp.servease.repository.ApplianceRepository;
 
@@ -26,11 +29,16 @@ public class ApplianceBO {
             throw new CustomerNotFoundException("Customer not found!");
         }
 
+        if (dto.getApplianceId() == null || dto.getApplianceId().isBlank()) {
+            dto.setApplianceId("APP-" + java.util.UUID.randomUUID().toString().substring(0, 8).toUpperCase());
+        }
+
         if (applianceRepository.existsById(dto.getApplianceId())) {
             throw new DuplicateApplianceException("Already exists!");
         }
 
         Appliance a = convertToEntity(dto);
+        a.setStatus(EntityStatus.ACTIVE);
         validateAppliance(a);
 
         applianceRepository.save(a);
@@ -42,7 +50,10 @@ public class ApplianceBO {
         if (!applianceRepository.existsById(id)) {
             throw new CustomerNotFoundException("Not found");
         }
-        applianceRepository.deleteById(id);
+        applianceRepository.softDeleteAppliance(id, EntityStatus.HIDDEN.name());
+        applianceRepository.hideServicesByApplianceId(id, ServiceStatus.HIDDEN.name());
+        applianceRepository.hideAssignmentsByApplianceId(id, AssignmentStatus.HIDDEN.name());
+        applianceRepository.hideServiceHistoryByApplianceId(id, EntityStatus.HIDDEN.name());
     }
 
     // ✅ GET BY ID
@@ -57,7 +68,7 @@ public class ApplianceBO {
     @Transactional(readOnly = true)
     public List<ApplianceDTO> getAllAppliances() {
 
-        List<Appliance> list = applianceRepository.findAll();
+        List<Appliance> list = applianceRepository.findByStatusNot(EntityStatus.HIDDEN);
 
         return list.stream()
                 .map(this::convertToDTO)
