@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -21,3 +22,7 @@ export const roleGuard: CanActivateFn = (route, state) => {
 
   return true;
 };
+=======
+import { inject } from '@angular/core';import { CanActivateFn, ActivatedRouteSnapshot, Router } from '@angular/router';import { AuthService } from '../services/auth.service';
+export const RoleGuard:CanActivateFn=(route:ActivatedRouteSnapshot)=>{const auth=inject(AuthService);const router=inject(Router);const roles=route.data['roles'] as string[];if(!roles.includes(auth.role||'')){router.navigate(['/profile']);return false;}return true;};
+>>>>>>> 1e21f13c135447ae0d68cc7dae3baf6991f05c1f

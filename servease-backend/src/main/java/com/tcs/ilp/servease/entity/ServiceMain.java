@@ -46,7 +46,8 @@ public class ServiceMain {
     private int reopenCount;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ServiceStatus status;
 
     @Column(name = "issue_summary")
     private String issueSummary;
@@ -64,7 +65,7 @@ public class ServiceMain {
     public ServiceMain(String serviceId, String customerId, String serviceCenterId,
                    String applianceId, LocalDate issueDate,
                    LocalDate preferredDate, int reopenCount,
-                   String status, String issueSummary,
+                   ServiceStatus status, String issueSummary,
                    LocalDateTime createdAt, String customComplaint) {
 
         this.serviceId = serviceId;
@@ -139,11 +140,11 @@ public class ServiceMain {
         this.reopenCount = reopenCount;
     }
 
-    public String getStatus() {
+    public ServiceStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ServiceStatus status) {
         this.status = status;
     }
 
