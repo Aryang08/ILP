@@ -1,0 +1,1 @@
+{"compileOnSave":false,"compilerOptions":{"baseUrl":"./","outDir":"./dist/out-tsc","strict":true,"noImplicitOverride":true,"noPropertyAccessFromIndexSignature":true,"noImplicitReturns":true,"module":"es2022","target":"es2022","moduleResolution":"bundler","useDefineForClassFields":false,"lib":["es2022","dom"]}}

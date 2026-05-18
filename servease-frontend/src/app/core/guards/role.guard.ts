@@ -1,0 +1,2 @@
+import { inject } from '@angular/core';import { CanActivateFn, ActivatedRouteSnapshot, Router } from '@angular/router';import { AuthService } from '../services/auth.service';
+export const RoleGuard:CanActivateFn=(route:ActivatedRouteSnapshot)=>{const auth=inject(AuthService);const router=inject(Router);const roles=route.data['roles'] as string[];if(!roles.includes(auth.role||'')){router.navigate(['/profile']);return false;}return true;};
