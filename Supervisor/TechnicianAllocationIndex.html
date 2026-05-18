@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase - Technician Allocation</title>
+    <link rel="stylesheet" href="css/TechnicianALlocationStyle.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <div class="logo-text" onclick="gotoDashboard()">ServEase</div>
+        <div class="top-icons">
+        </div>
+    </div>
+
+    <div class="container">
+
+        <aside class="sidebar">
+
+            <nav class="menu">
+                <ul>
+                    <li> Dashboard</li>
+                    <li> Tickets</li>
+                    <li class="active"> Technician Allocation</li>
+                    <li> History</li>
+			<li>Register Technician</li>
+                </ul>
+            </nav>
+
+            <div class="logout"> Logout</div>
+        </aside>
+
+        <section class="allocation-panel">
+
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <p>Unassigned</p>
+                    <h3>8</h3>
+                </div>
+                <div class="summary-card">
+                    <p>Assigned</p>
+                    <h3>32</h3>
+                </div>
+                <div class="summary-card">
+                    <p>Delayed</p>
+                    <h3>5</h3>
+                </div>
+            </div>
+
+            <div class="filters">
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="unassigned">Unassigned</option>
+                    <option value="assigned">Assigned</option>
+                </select>
+
+                <input type="text" id="ticketSearch" placeholder="Search Ticket ID / Appliance">
+            </div>
+
+            <div class="table-box">
+                <h3>Technician Allocation</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Appliance</th>
+                                <th>Issue</th>
+                                <th>Preferred Date</th>
+                                <th>Assigned Technician</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>SR-10458</td>
+                                <td>LG Washing</td>
+                                <td>Leaking Water</td>
+                                <td>May 28, 10:30 AM</td>
+                                <td class="assigned-tech">Unassigned</td>
+                                <td><button class="assign-btn">View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>SR-10484</td>
+                                <td>Dryer</td>
+                                <td>Super Noisy</td>
+                                <td>May 28, 1:00 PM</td>
+                                <td class="assigned-tech">Unassigned</td>
+                                <td><button class="assign-btn">View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>SR-10504</td>
+                                <td>Samsung Refrigerator</td>
+                                <td>Not Cooling</td>
+                                <td>May 26, 2:00 PM</td>
+                                <td class="assigned-tech">Unassigned</td>
+                                <td><button class="assign-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+<div class="pagination">
+    <span id="allocationTableInfo">Showing 0 to 0 of 0 entries</span>
+    <div class="pages" id="allocationPagination"></div>
+</div>
+            </div>
+
+        </section>
+<!-- FOOTER OUTSIDE CONTAINER -->
+    <footer class="footer">
+        <p>© 2026 ServEase Services</p>
+    </footer>
+    </div>
+
+
+
+    <script src="javascript/SupervisorTechnicianALlocation.js"></script>
+</body>
+</html>

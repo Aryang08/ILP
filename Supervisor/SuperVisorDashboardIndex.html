@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase – Supervisor Dashboard</title>
+    <link rel="stylesheet" href="css/SuperVisorDashboardStyle.css">
+
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+
+        <div class="logo-text" onclick="gotoDashboard()">ServEase</div>
+
+        <div class="top-icons">
+            
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <nav class="menu">
+                <ul>
+                    <li class="active">Dashboard</li>
+                    <li> Tickets</li>
+                    <li> Technician Allocation</li>
+                    <li> History</li>
+			<li>Register Technician</li>
+                </ul>
+            </nav>
+
+            <div class="logout"> Logout</div>
+        </aside>
+
+        <!-- MAIN DASHBOARD -->
+        <section class="dashboard-panel">
+            <div class="kpi-cards">
+                <div class="kpi-card">
+                    <p>Total Open</p>
+                    <h3>64</h3>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Pending Technician Assignment</p>
+                    <h3>12</h3>
+                </div>
+
+                <div class="kpi-card">
+                    <p>In Progress</p>
+                    <h3>36</h3>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Delayed</p>
+                    <h3>8</h3>
+                </div>
+            </div>
+
+            <!-- TABLE GRID -->
+            <div class="dashboard-table-grid">
+
+                <div class="table-box">
+                    <h3>Technician Availability</h3>
+                    <table>
+                        <tr><th>Technician</th><th>Status</th><th>Jobs</th></tr>
+                        <tr><td>Rajesh Kumar</td><td>Available</td><td>2</td></tr>
+                        <tr><td>Nikhil Sharma</td><td>Busy</td><td>4</td></tr>
+                        <tr><td>Ankit Verma</td><td>On Leave</td><td>0</td></tr>
+                        <tr><td>Vinod Jain</td><td>Available</td><td>8</td></tr>
+                    </table>
+                </div>
+
+                <div class="table-box">
+                    <h3>Today's Schedule</h3>
+                    <table>
+                        <tr><th>Technician</th><th>Task</th><th>Time</th></tr>
+                        <tr><td>Rajesh Kumar</td><td>LG Washing Machine</td><td>10:00 AM</td></tr>
+                        <tr><td>Sunita Raj</td><td>AC Repair</td><td>10:30 AM</td></tr>
+                        <tr><td>Anil Desai</td><td>Microwave</td><td>11:00 AM</td></tr>
+                        <tr><td>Rashmi Patel</td><td>Refrigerator</td><td>11:30 AM</td></tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+<!-- FOOTER OUTSIDE CONTAINER -->
+    <footer class="footer">
+        <p>© 2026 ServEase Services</p>
+    </footer>
+    </div>
+
+    
+
+    <script src="javascript/SuperVisorDashboard.js"></script>
+</body>
+</html>

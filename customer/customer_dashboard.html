@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase Dashboard</title>
+    <link rel="stylesheet" href="css/customer_dashboard.css">
+</head>
+
+<body>
+
+<!-- ================= TOP NAVBAR ================= -->
+<div class="topbar">
+    <div class="top-left">
+	<span class="menu-toggle">☰</span>
+         <span class="logo-text">ServEase</span>
+    </div>
+    <div class="top-right">
+        
+      
+    </div>
+</div>
+
+<div class="wrapper">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <ul>
+            <li class="active"> Dashboard</li>
+	    <li> My Appliances</li>
+            <li> Service History</li>
+	    <li> Track Request</li>
+            <li class="logout-item"> Logout</li>
+        </ul>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <h2>Welcome, Ajay!</h2>
+
+        <div class="alert-box">
+            You have 1 pending service request that needs your attention.
+        </div>
+
+        <h3 class="section-title">Active Service Requests</h3>
+
+        <div class="cards-row">
+            <div class="card">
+                <span class="badge pending">Pending</span>
+                <h3>Washing Machine</h3>
+		<br>
+                <a href="" class="btn-small">View Details</a>
+
+            </div>
+
+            <div class="card">
+                <span class="badge progress">In Progress</span>
+                <h3>Refrigerator</h3>
+		<br>
+                <a href="service-request.html" class="btn-small">View Details</a>
+            </div>
+
+            <div class="card">
+                <span class="badge completed">Completed</span>
+                <h3>Microwave</h3>
+		<br>
+                 <a href="service-history.html" class="btn-small">View Details</a>
+            </div>
+        </div>
+
+               <h3 class="section-title">Registered Appliances</h3>
+
+        <div class="cards-row">
+            <div class="card">
+                <h3>Washing Machine</h3>
+                <span class="badge progress">In Warranty</span>
+                <p class="small-text">Last Service: Feb 15, 2024</p>
+            </div>
+
+            <div class="card">
+                <h3>Refrigerator</h3>
+                <span class="badge pending">Out of Warranty</span>
+                <p class="small-text">Last Service: Oct 10, 2023</p>
+            </div>
+
+            <div class="card">
+                <h3>Microwave Oven</h3>
+                <span class="badge progress">In Warranty</span>
+                <p class="small-text">Last Service: Aug 5, 2024</p>
+            </div>
+        </div>
+
+<!-- ================= LOGOUT MODAL ================= -->
+<div id="logoutModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-actions">
+            <button id="logoutYes" class="btn-primary">Yes</button>
+            <button id="logoutNo" class="btn-secondary">No</button>
+        </div>
+    </div>
+</div>
+
+    </main>
+</div>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<script src="js/customer_dashboard.js"></script>
+</body>
+</html>

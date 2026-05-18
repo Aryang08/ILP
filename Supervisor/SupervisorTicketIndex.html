@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase – Supervisor Tickets</title>
+    <link rel="stylesheet" href="css/SupervisorTicketStyle.css">
+<script src = "javascript/SupervisorTickets.js"> </script>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+        <div class="logo-text" onclick="gotoDashboard()">ServEase</div>
+        <div class="top-icons">
+         
+            
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <nav class="menu">
+                <ul>
+                    <li> Dashboard</li>
+                    <li class="active"> Tickets</li>
+                    <li> Technician Allocation</li>
+                    <li> History</li>
+			<li>Register Technician</li>
+                </ul>
+            </nav>
+
+            <div class="logout"> Logout</div>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <section class="tickets-panel">
+
+            <!-- SUMMARY CARDS -->
+            <div class="ticket-summary">
+                <div class="summary-card">
+                    <p>New Tickets</p>
+                    <h3>20</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>Pending Assignment</p>
+                    <h3>8</h3>
+                </div>
+
+                <div class="summary-card">
+                    <p>In Progress</p>
+                    <h3>32</h3>
+                </div>
+            </div>
+
+            <!-- FILTERS -->
+             <div class="filters">
+                <select id="statusFilter">
+   		<option value="all">All Status</option>
+    		<option value="Open">Open</option>
+    		<option value="Assigned">Assigned</option>
+    		<option value="Delayed">Delayed</option>
+    		<option value="Completed">Completed</option>
+		</select>
+
+                <input type="text" id="ticketSearch" placeholder="Search Ticket ID/Appliance">
+            </div>
+
+
+            <!-- TICKET TABLE -->
+            <div class="table-box">
+                <h3>Ticket Table</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Customer</th>
+                            <th>Appliance</th>
+                            <th>Issue</th>
+                            <th>Preferred Slot</th>
+                            <th>Status</th>
+                            <th>Technician</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>SR-10458</td>
+                            <td>Aakash Gupta</td>
+                            <td>Washer</td>
+                            <td>Leaking Water</td>
+                            
+                            <td>May 23, 2024</td>
+                            <td>Unassigned</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td>SR-10689</td>
+                            <td>Sunita Raj</td>
+                            <td>AC</td>
+                            <td>Not Cooling Properly</td>
+                            
+                            <td>May 23, 2024</td>
+                            <td>In Progress</td>
+                            <td>Rerguse</td>
+                        </tr>
+
+                        <tr>
+                            <td>SR-10484</td>
+                            <td>Amit Agarwal</td>
+                            <td>Dryer</td>
+                            <td>Super Noisy</td>
+                            
+                            <td>May 23, 2024</td>
+                            <td>In Progress</td>
+                            <td>Rajesh Kumar</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+ <!-- FOOTER OUTSIDE CONTAINER -->
+    <footer class="footer">
+        <p>© 2026 ServEase Services</p>
+    </footer>
+    </div>
+
+
+
+</body>
+</html>

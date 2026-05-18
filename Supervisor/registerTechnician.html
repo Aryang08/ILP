@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServEase - Register Technician</title>
+<link rel="stylesheet" href="css/registerTechnician.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="logo-text" onclick="gotoDashboard()">ServEase</div>
+</div>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <ul class="menu">
+        <li>Dashboard</li>
+        <li>Tickets</li>
+        <li>Technician Allocation</li>
+        <li>History</li>
+        <li class="active">Register Technician</li>
+    </ul>
+    <div class="logout"> Logout</div>
+</aside>
+
+<!-- PANEL -->
+<section class="panel">
+
+<div class="header">
+    
+   <button type="button" onclick="openAddModal()">+ Add Technician</button>
+</div>
+
+<div class="table-box">
+<h3>Technicians</h3>
+<table id="techTable">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Specialization</th>
+<th>Contact</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+</section>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+
+<h3>Add Technician</h3>
+<label for="name">Full Name <span class="required">*</span></label>
+<input id="name" placeholder="Full Name">
+
+<label for="email" class="field-label">
+    Email <span class="required">*</span>
+    <button
+        type="button"
+        class="info-icon"
+        data-tooltip="Use a valid email like name@example.com"
+        aria-label="Email format info"
+    >i</button>
+</label>
+<input id="email" placeholder="Enter email">
+<span id="emailError" class="error-text">Please enter a valid email address</span>
+
+<label for="contact" class="field-label">
+    Contact <span class="required">*</span>
+</label>
+<input
+    id="contact"
+    placeholder="+91 9876543210"
+    inputmode="numeric"
+    maxlength="14"
+>
+<span id="contactError" class="error-text">Please enter a valid 10-digit mobile number</span>
+
+<label for="password" class="field-label">
+    Password <span class="required">*</span>
+    <button
+        type="button"
+        class="info-icon"
+        data-tooltip="Password must be at least 8 characters and include 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."
+        aria-label="Password rules info"
+    >i</button>
+</label>
+<input id="password" type="password" placeholder="Enter password">
+<span id="passwordError" class="error-text">
+    Password must be at least 8 characters and include uppercase, lowercase, number, and special character
+</span>
+
+<label>Specialization <span class="required">*</span></label>
+
+<!-- SKILL DROPDOWN -->
+<div class="multi-select">
+
+    <div class="select-box" id="selectBox">
+        <div id="selectedSkills" class="selected-skills">
+            <span class="placeholder">Select Specialization</span>
+        </div>
+        <span>▾</span>
+    </div>
+
+    <div id="skillDropdown" class="dropdown">
+        <label><input type="checkbox" value="AC"><span>AC</span></label>
+        <label><input type="checkbox" value="Refrigerator"><span>Refrigerator</span></label>
+        <label><input type="checkbox" value="Washing Machine"><span>Washing Machine</span></label>
+        <label><input type="checkbox" value="TV"><span>TV</span></label>
+        <label><input type="checkbox" value="Oven"><span>Oven</span></label>
+    </div>
+
+</div>
+
+<div class="actions">
+<button onclick="addTech()">Register</button>
+<button onclick="closeModal()">Close</button>
+</div>
+
+</div>
+</div>
+ <!-- FOOTER OUTSIDE CONTAINER -->
+    <footer class="footer">
+        <p>© 2026 ServEase Services</p>
+    </footer>
+
+<script src="javascript/registerTechnician.js"></script>
+</body>
+</html>

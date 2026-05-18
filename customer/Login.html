@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo" onclick="gotoHome()">
+  <p> ServEase </p>
+</div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+ <div class="user-icon">📱</div>
+            <h1>Customer Login </h1>
+            <p class="subtitle">Quickly verify your identity with your registered phone number</p>
+<p class="helper-text">Use phone number registered at purchase</p>
+<br></br>
+            <form onsubmit="return validateForm(event);">
+                <div class="input-group">
+                    <label>Phone Number<span class="required">*</span></label>
+                    <div class="phone-input">
+                        <select class="country-code">
+                            <option value="+91">+91</option>
+                        </select>
+                        
+<input
+  type="tel"
+  id="mobile"
+  inputmode="numeric"
+  maxlength="10"
+  oninput="restrictNumber(this)"
+  placeholder="Enter your Phone number"
+  required
+>
+
+<button type="submit" value="Submit" class="btn-1" id="verifyBtn" >Verify</button>
+
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter OTP<span class="required">*</span></label>
+                    <div class="otp-container">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                        <input type="text" maxlength="1">
+                    </div>
+                </div>
+
+                
+<button type="submit" class="btn-primary" id="continueBtn">
+    Continue
+</button>
+
+                
+                
+                <p class="error-text"></p>
+
+                              
+
+            </form>
+        </div>
+    </main>
+	
+</a>
+</div>
+ <!-- Footer -->
+    <footer>
+        <p>© 2026 ServEase Services | About | FAQ | Contact</p>
+    </footer>
+
+<script src="js/Login.js"></script>
+</body>
+</html>

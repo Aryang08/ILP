@@ -1,0 +1,34 @@
+select * from dev.assignment;
+select * from dev.service;
+select * from dev.technician;
+select * from dev.user;
+select * from dev.supervisor;
+select * from dev.service_center;
+select * from dev.specialization;
+select * from dev.technician_skill;
+select * from dev.user_login;
+
+INSERT INTO dev.supervisor (
+    supervisor_id,
+    user_id,
+    service_center_id
+)
+VALUES (
+    'sp2',
+    'u14',
+    'SC1001'
+);
+
+
+---- Step 1: add column WITHOUT NOT NULL
+--ALTER TABLE dev.user_login 
+--ADD COLUMN password varchar(255);
+--
+---- Step 2: fill existing rows
+--UPDATE dev.user_login 
+--SET password = 'temp123';
+--
+---- Step 3: apply constraint
+--ALTER TABLE dev.user_login 
+--ALTER COLUMN password SET NOT NULL;
+--``

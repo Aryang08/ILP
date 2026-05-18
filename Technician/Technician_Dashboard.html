@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technician Dashboard</title>
+  <link rel="stylesheet" href="Css/Technician_Dashboard.css" />
+  <script src="javascript/script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= TOPBAR ================= -->
+<header class="topbar">
+  <button class="hamburger" id="hamburgerBtn">☰</button>
+
+  <div class="logo-text">ServEase</div>
+
+ </header>
+
+<!-- Overlay (mobile only) -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <nav class="menu">
+    <ul>
+      <li class="active"> Dashboard</li>
+      <li id="myjobs"> My Job</li>
+      <li id="requests"> Requests</li>
+      
+    </ul>
+  </nav>
+
+  	<div class="logout"><a href="" onclick="openLogoutModal(); 
+	return false;">
+	<span></span> Logout
+	</a></div>
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-content">
+
+  <!-- ✅ TODAY'S SNAPSHOT -->
+  <div class="card">
+    <h3>Today's Snapshot</h3>
+    <div class="stats">
+      <div data-filter="all" class="active-filter">
+        Jobs Assigned<br><b>5</b>
+      </div>
+      <div data-filter="Completed">
+        Completed<br><b>2</b>
+      </div>
+      <div data-filter="Pending">
+        Pending<br><b>2</b>
+      </div>
+      <div data-filter="In Progress">
+        In Progress<br><b>1</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ ASSIGNED JOBS -->
+  <div class="card">
+    <h3>Assigned Jobs</h3>
+    <table>
+      <tr>
+        <th>Job ID</th>
+        <th>Appliance</th>
+        <th>Status</th>
+        </tr>
+
+      <tr data-status="Completed">
+        <td>1023</td><td>AC</td><td>Completed</td>
+      </tr>
+      <tr data-status="In Progress">
+        <td>1024</td><td>Washing Machine</td><td>In Progress</td>
+      </tr>
+      <tr data-status="Pending">
+        <td>1025</td><td>Refrigerator</td><td>Pending</td>
+      </tr>
+      <tr data-status="Completed">
+        <td>1026</td><td>Microwave</td><td>Completed</td>
+      </tr>
+      <tr data-status="Pending">
+        <td>1027</td><td>TV</td><td>Pending</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ✅ JOB DETAILS -->
+  <div class="card">
+    <h3>Job Details</h3>
+    <p><b>Customer:</b> Sarah Johnson</p>
+    <p><b>Appliance:</b> Refrigerator</p>
+    <p><b>Issue:</b> Not cooling properly</p>
+    <p><b>Time Slot:</b> 10 AM – 12 PM</p>
+  </div>
+
+  <!-- ✅ SERVICE DETAILS -->
+<div class="card service-details">
+<h3>Service Details</h3>
+<div class="history-item">
+<strong>Previous Issues:</strong>
+<p>Cooling inconsistency, unusual noise</p>
+</div>
+
+	<div class="history-item">
+	<strong>Past Repairs:</strong>
+	<p>Gas refill, fan motor replaced</p>
+	</div>
+	<div class="history-item">
+<strong>Last Service Date:</strong>
+<p>12 Feb 2025</p>
+</div>
+	</div>
+  </div>
+<footer>
+  <p>© 2026 ServEase Services</p>
+</footer>
+</main>
+<!-- ================= FOOTER ================= -->
+
+
+</body>
+</html>

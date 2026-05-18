@@ -1,0 +1,473 @@
+/* ================= CARDS ================= */
+.card {
+    background: white;
+    border: 1px solid #e5eaf3;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* ================= REQUEST HEADER ================= */
+.request-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.request-card h4 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.request-card p {
+    font-size: 16px;
+}
+
+.request-card p strong {
+    color: #2f5fcd;
+}
+
+.help-btn {
+    background: #eef4ff;
+    color: #2f5fcd;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.help-btn:hover {
+    background: #dbe8ff;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-header h4 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 14px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #d2dae6;
+}
+
+.timeline-line-active {
+    position: absolute;
+    top: 14px;
+    left: 10%;
+    width: 60%;
+    height: 2px;
+    background: #26c6da;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #dfe6f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 12px;
+}
+
+.timeline-step.completed .dot {
+    background: #2f5fcd;
+}
+
+.timeline-step.active .dot {
+    background: #26c6da;
+}
+
+.timeline-step.pending .dot {
+    background: #e0e0e0;
+}
+
+.label {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.timeline-step.completed .label {
+    color: #2f5fcd;
+}
+
+.timeline-step.active .label {
+    color: #26c6da;
+}
+
+/* ================= TECH DETAILS ================= */
+.card h4 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.tech-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: #e8efff;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-info strong {
+    display: block;
+    font-size: 15px;
+    color: #333;
+}
+
+.tech-info p {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.tech-contact {
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+}
+
+.tech-contact p {
+    margin-bottom: 4px;
+}
+
+/* ================= UPDATES ================= */
+.update {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.update-dot {
+    width: 10px;
+    height: 10px;
+    background: #26c6da;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.update p {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+.update small {
+    color: #999;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.assist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.assist p {
+    color: #666;
+    font-size: 14px;
+}
+
+.support-btn {
+    background: #2f5fcd;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.support-btn:hover {
+    background: #254a9e;
+}
+
+/* ================= REVIEW SECTION ================= */
+.review-form, .submitted-review {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#reviewCard {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.review-form h4, .submitted-review h4 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Stars */
+.stars {
+    display: flex;
+    gap: 6px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #ccc;
+    margin: 15px 0;
+}
+
+.stars span {
+    transition: color 0.2s;
+}
+
+.stars span:hover,
+.stars span.selected {
+    color: #fbc02d !important;
+}
+
+.stars span {
+    transition: color 0.2s;
+}
+
+.stars span.active,
+.stars span:hover {
+    color: #fbc02d;
+}
+
+.stars.readonly {
+    cursor: default;
+}
+
+#reviewText {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    resize: none;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#reviewText:focus {
+    outline: none;
+    border-color: #2f5fcd;
+}
+
+#reviewText.error {
+    border: 2px solid #e53935;
+    background: #fff5f5;
+}
+
+.error-message {
+    color: #e53935;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.submit-review {
+    background: #2f5fcd;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.submit-review:hover {
+    background: #254a9e;
+}
+
+#submittedReview h4 {
+    color: #28a745;
+    margin-bottom: 12px;
+}
+
+#submittedText {
+    margin-top: 10px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ================= BILLING MODAL ================= */
+.billing-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.billing-modal {
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.billing-modal h3 {
+    margin-bottom: 20px;
+    color: #2f5fcd;
+    font-size: 18px;
+}
+
+.billing-modal p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.bill-items {
+    margin: 16px 0;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.bill-items div {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.bill-items div span:first-child {
+    color: #666;
+}
+
+.bill-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.bill-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pay-btn {
+    background: #2f5fcd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pay-btn:hover {
+    background: #254a9e;
+}
+
+.close-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.close-btn:hover {
+    background: #e0e0e0;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .issue-panel {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+
+    .request-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .timeline {
+        grid-template-columns: repeat(5, 100px);
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .tech-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .tech-contact {
+        text-align: left;
+    }
+
+    .assist {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .billing-modal {
+        width: 90%;
+        max-width: 360px;
+    }
+
+}

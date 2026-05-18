@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase – Issue Capture</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+    <button id="menuToggle" class="top-menu-btn hamburger" data-toggle="sidebar">☰</button>
+    <div class="logo">
+        <p>ServEase</p>
+    </div>
+    <div class="top-icons"></div>
+</div>
+
+<!-- Backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu">
+            <ul>
+               <li id="dashboardBtn">
+                    <span></span> Dashboard
+                </li>
+                <li class="active"><span></span> My Appliances</li>
+	<li id="historyBtn">
+                    <span></span> Service History
+                </li>
+                <li id="trackBtn">
+                    <span></span> Track Request
+                </li>
+            </ul>
+        </nav>
+<div class="logout">
+           <p id="logoutBtn">
+                    <span></span> Logout
+                </p>
+
+        </div>    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <section class="issue-panel">
+
+        <div class="appliance-topbar">
+            <div class="appliance-topbar-inner">
+                <select id="applianceDropdown">
+                    <option value="Television">Television</option>
+                    <option value="Refrigerator">Refrigerator</option>
+                    <option value="Air Conditioner">Air Conditioner</option>
+                    <option value="Washing Machine">Washing Machine</option>
+                    <option value="Microwave Oven">Microwave Oven</option>
+                </select>
+                <button id="removeApplianceBtn">Remove</button>
+            </div>
+        </div>
+
+        <!-- SUMMARY PANEL -->
+        <main class="summary-panel" id="summaryPanel">
+            <div class="header">
+                <div id="applianceIcon"></div>
+                <h1 id="applianceName">Television</h1>
+            </div>
+
+            <div class="card-row">
+                <div class="info-card">
+                    <p class="label">Warranty Status</p>
+                    <p class="value" id="warranty">--</p>
+                </div>
+                <div class="info-card">
+                    <p class="label">Installation Date</p>
+                    <p class="value" id="installDate">--</p>
+                </div>
+                <div class="info-card">
+                    <p class="label">Purchase Date</p>
+                    <p class="value" id="purchaseDate">--</p>
+                </div>
+            </div>
+
+            <div class="details-card">
+                <div class="detail-item">
+                    <p class="label">Model Number</p>
+                    <p class="value" id="modelNumber">--</p>
+                </div>
+                <div class="detail-item">
+                    <p class="label">Serial Number</p>
+                    <p class="value" id="serialNumber">--</p>
+                </div>
+            </div>
+
+            <div class="action">
+                <button class="request-btn" id="requestServiceBtn">Request Service</button>
+            </div>
+        </main>
+
+        <!-- ISSUE CAPTURE PANEL -->
+        <div id="issueCapturePanel" style="display: none;">
+
+            <div class="issue-header">
+                <div class="device-info">
+                    <h3 id="applianceTitle">Television</h3>
+                
+                <div class="question-box" id="questionBox">
+                <h2 id="questionText">Is the TV turning on?</h2>
+
+                <div class="choice-buttons">
+                    <button class="btn-outline option-btn">YES</button>
+                    <button class="btn-outline option-btn">NO</button>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="prev-btn">Previous</button>
+                    <button class="next-btn">Next</button>
+                </div>
+
+                <div class="validation-message" style="display: none;">
+                    Please select an option before proceeding.
+                </div>
+              </div>
+            </div>
+             <div class="complaint-box" id="complaintBox" style="display: none;">
+                <h2>Describe Your Issue</h2>
+                <p class="complaint-subtitle">
+                    You've answered the diagnostic questions. Feel free to add any additional details or describe your complaint in your own words.
+                </p>
+
+                <div class="complaint-field">
+                    <label for="customComplaint" class="complaint-label">
+                        Custom Complaint <span class="optional-tag">(Optional)</span>
+                    </label>
+                    <textarea
+                        id="customComplaint"
+                        class="complaint-textarea"
+                        placeholder="e.g. The TV makes a clicking sound every 10 minutes and the screen flickers at night. The issue started 2 weeks ago..."
+                        maxlength="500"
+                    ></textarea>
+                    <div class="char-counter"><span id="charCount">0</span> / 500</div>
+                </div>
+
+                <div class="complaint-nav-buttons">
+                    <button class="prev-btn" id="backToQuestionsFromComplaint">Back</button>
+                    <button class="confirm-btn" id="proceedToSchedule">Proceed to Schedule</button>
+                </div>
+            </div>
+
+
+            
+
+            <!-- QUESTION BOX -->
+            
+            <!-- CUSTOM COMPLAINT BOX (NEW) -->
+           
+           <!-- SCHEDULE BOX -->
+<div class="schedule-box" id="scheduleBox" style="display: none;">
+    <h2>Schedule Your Service</h2>
+
+    <div class="schedule-container">
+        <div class="calendar-box small-calendar">
+            <div class="calendar-header">
+                <button class="calendar-nav" id="prevMonth">‹</button>
+                <h3 id="calendarTitle">April 2026</h3>
+                <button class="calendar-nav" id="nextMonth">›</button>
+            </div>
+
+            <div class="weekdays">
+                <span>Su</span><span>Mo</span><span>Tu</span>
+                <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+
+            <div class="dates" id="calendarDates"></div>
+        </div>
+    </div>
+
+    <div class="selected-info">
+        Selected Date: <strong id="selectedText">Please select a date</strong>
+    </div>
+
+    <div class="schedule-nav-buttons">
+        <button class="prev-btn" id="backToQuestions">Back</button>
+        <button class="confirm-btn" id="confirmSchedule">Confirm Schedule</button>
+    </div>
+
+    <div class="validation-message" id="scheduleValidation" style="display: none;">
+        Please select a date.
+    </div>
+</div>
+
+<!-- CONFIRMATION BOX -->
+<div class="confirmation-box" id="confirmationBox" style="display: none;">
+    <div class="success-icon">✓</div>
+    <h2>Service Scheduled Successfully!</h2>
+    <div class="confirmation-details">
+        <p><strong>Appliance:</strong> <span id="confirmAppliance">Television</span></p>
+        <p><strong>Date:</strong> <span id="confirmDate">April 14, 2026</span></p>
+        <p id="confirmComplaintRow" style="display:none;">
+            <strong>Complaint:</strong> <span id="confirmComplaint"></span>
+        </p>
+    </div>
+    <p class="confirmation-note">A technician will arrive at your location on the scheduled date.</p>
+    <button class="confirm-btn" id="newServiceBtn">Schedule Another Service</button>
+</div>
+
+
+        </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<script src="js/test.js"></script>
+</body>
+</html>

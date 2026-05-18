@@ -1,0 +1,115 @@
+/* BASE */
+body {
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background: linear-gradient(to right, #2c4f8a, #1d3b6e);
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    margin-top : 10px;
+    padding-top: 10px;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.user-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #253D67;
+    font-size: 22px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #777;
+    margin-top: 6px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: #1D61D1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #154BAD;
+}
+
+.error-text {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #D32F2F;
+}
+
+.required {
+    color: red;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1px;
+  margin-top: 50px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServEase – Service Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="topbar">
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="logo-text">ServEase</div>
+    <div class="top-icons">
+                <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">
+                <span>Notifications</span>
+                <button class="mark-all-read" onclick="markAllRead()">Mark all read</button>
+            </div>
+            <div class="notification-list" id="notificationList">
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Your service request #123456 has been completed</p>
+                    <small>2 mins ago</small>
+                </div>
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Technician John Doe assigned to your request</p>
+                    <small>30 mins ago</small>
+                </div>
+                <div class="notification-item read" onclick="markAsRead(this)">
+                    <p>Service request #123455 has been scheduled</p>
+                    <small>1 hour ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="container">
+
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu">
+            <ul>
+		<li><a href="customer_dashboard.html"><span></span>Dashboard</a></li>
+		<li><a href="test.html"><span></span>My Application</a></li>
+		<li class="active"><a href="service-history.html"><span></span> Service History</a></li>
+                <li><a href="service-request.html"><span></span> Track Request</a></li>
+                
+		 
+            </ul>
+
+            </ul>
+        </nav>
+        <div class="logout">
+            <a href="#" onclick="openLogoutModal(); return false;"> Logout</a>
+        </div>
+    </aside>
+
+    <section class="issue-panel">
+
+        <button class="back-btn" onclick="history.back()" style="margin-bottom:20px;padding:10px 16px;background:white;border:1px solid #ddd;border-radius:6px;cursor:pointer;font-size:14px;">← Back</button>
+
+        <div class="card">
+            <div class="detail-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                <div>
+                    <h3 id="name" style="font-size:20px;color:#333;"></h3>
+                    <p id="id" style="color:#666;font-size:14px;"></p>
+                </div>
+                <span id="status" class="status" style="padding:6px 14px;border-radius:20px;font-size:13px;"></span>
+            </div>
+
+            <div style="margin-bottom:16px;">
+                <h4 style="font-size:14px;color:#666;margin-bottom:8px;">Issue Description</h4>
+                <p id="issue" style="color:#333;font-size:15px;"></p>
+            </div>
+
+            <div style="margin-bottom:16px;">
+                <h4 style="font-size:14px;color:#666;margin-bottom:8px;">Technician</h4>
+                <p id="tech" style="color:#333;font-size:15px;"></p>
+            </div>
+
+            <div style="display:flex;gap:40px;">
+                <div>
+                    <h4 style="font-size:14px;color:#666;margin-bottom:8px;">Date</h4>
+                    <p id="date" style="color:#333;font-size:15px;"></p>
+                </div>
+                <div>
+                    <h4 style="font-size:14px;color:#666;margin-bottom:8px;">Billing Amount</h4>
+                    <p style="color:#333;font-size:15px;">₹ <span id="amount"></span></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<script src="js/service-details.js"></script>
+</body>
+</html>

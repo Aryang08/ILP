@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: #F8FEFF;
+  font-size: 15px;
+}
+
+/* HEADER */
+.header {
+  height: 60px;
+  background: linear-gradient(to right, #2c4f8a, #1d3557);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index:1001;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  top: 60px;        /* header height */
+  bottom: 50px;     /* footer height */
+  left: 0;
+  width: 240px;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.menu-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background: #e8efff;
+  color: #2f5fcd;
+  font-weight: 600;
+  border-right: 3px solid #2f5fcd;
+}
+
+.menu-item:hover {
+  background: #E0F7FA;
+}
+
+/* pushes logout down */
+.spacer {
+  flex: 1;
+}
+
+.logout {
+  color: red;
+  cursor:pointer;
+  padding: 10px;
+}
+
+/* MAIN */
+.main {
+  margin-left: 220px;
+  padding: 70px 12px 80px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.full {
+  grid-column: 1/-1;
+}
+
+/* INPUT */
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 3px;
+  border-radius:8px;
+  border-color:#20406d;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #2f5fcd;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius:8px;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+/* HIDE */
+.hidden {
+  display: none;
+}
+
+/* MOBILE */
+@media(max-width:900px) {
+  .hamburger {
+    display: block
+  }
+
+  .sidebar {
+    left: -240px
+  }
+
+  .sidebar.open {
+    left: 0
+  }
+
+  .main {
+    margin-left: 0
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+.logout-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logout-popup.show {
+  display: flex;
+}
+
+.logout-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  z-index: 1002;
+}

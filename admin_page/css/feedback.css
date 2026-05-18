@@ -1,0 +1,232 @@
+/* ===== GLOBAL ===== */
+*{
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+   font-family:Arial;
+}
+body{
+    background:#F8FEFF;
+}
+
+/* ===== HEADER ===== */
+.header{
+    height:60px;
+    background:linear-gradient(to right,#2c4f8a,#1d3557);
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1001;
+}
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+.hamburger{
+    display:none;
+    font-size:26px;
+    cursor:pointer;}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:240px;
+    height:calc(100vh - 60px);
+    background:white;
+    border-right:1px solid #ddd;
+    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    height:1130px;
+    transition:left 0.3s ease;
+}
+.menu-item{
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.menu-item:hover{
+    background:#E0F7FA;
+    border-right:3px solid #2f5fcd;
+}
+.menu-item.active{
+    background:#e8efff;
+    color:#2f5fcd;
+    font-weight:600;
+    border-right:3px solid #2f5fcd;
+}
+
+/* LOGOUT */
+.logout{
+    margin-top:auto;
+    padding:12px;
+    cursor:pointer;
+    
+    border-radius:8px;
+    }
+.logout:hover{
+        color:black;
+    
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:240px;
+    padding:80px 20px 20px 20px;
+}
+
+/* FILTER */
+.filter-box{margin-bottom:15px;}
+select{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+/* TABLE */
+.table-box{
+    background:white;
+    border-radius:12px;
+    border:1px solid #dbe2ea;
+    overflow-x:auto;
+    margin-bottom:20px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    
+    min-width:800px;
+}
+th{
+    padding:14px;
+    padding-right:180px;
+    border-bottom:1px solid #eee;
+}
+td{
+    padding:14px;
+	
+    border-bottom:1px solid #eee;
+}
+/* GRAPH */
+.chart-box{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    max-width:600px;
+}
+
+/* FOOTER */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .hamburger{display:
+        block;}
+    .sidebar{left:-240px;}
+    .sidebar.open{left:0;}
+    .main{margin-left:0;padding-top:80px;}
+}
+
+
+/* POPUP BACKGROUND */
+/* POPUP BACKGROUND – SAME AS PREVIOUS MODAL */
+.logout-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+/* SHOW */
+.logout-popup.show {
+    display: flex;
+}
+
+/* POPUP BOX – MATCHES modal-content */
+.popup-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.popup-box h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* TEXT */
+.popup-box p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* BUTTON AREA */
+.popup-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* BUTTON BASE */
+.btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+/* CANCEL BUTTON – SAME AS PREVIOUS */
+.cancel {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.cancel:hover {
+    background: #e0e0e0;
+}
+
+/* CONFIRM BUTTON – SAME AS PREVIOUS */
+.confirm {
+    background: #2f5fcd;
+    color: white;
+}
+
+.confirm:hover {
+    background: #254a9e;
+}

@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.navbar {
+    background: linear-gradient(to right, #2c4f8a, #1d3b6e);;
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== Logo ===== */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white; /* Serv */
+    letter-spacing: 0.5px;
+}
+.required {
+  color: red;
+  font-weight: bold;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* 🔴 CHANGE */
+  min-height: calc(100vh - 60px);
+  padding-top: 40px;         /* ✅ Space below navbar */
+}
+
+
+.login-card {
+  background: white;
+  padding: 40px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #1D61D1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.user-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+small {
+  display: block;
+  margin-top: 5px;
+}

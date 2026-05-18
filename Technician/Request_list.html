@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technician Request List</title>
+  <link rel="stylesheet" href="Css/Technician_style.css" />
+  <script src="javascript/backend.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <button class="hamburger" id="hamburgerBtn">☰</button>
+
+  <div class="logo-text">ServEase</div>
+
+  <div class="top-icons">
+   
+  </div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+
+  <nav class="menu">
+    <ul>
+        <li id="Dashboardlink"> Dashboard</li>
+        <li onclick="window.location.href='TechnicianjobDetail.html'"> My Job</li>
+        <li class="active"> Requests</li>
+      </ul>
+  </nav>
+
+  	<div class="logout"><a href="" onclick="openLogoutModal(); 
+	return false;">
+	<span></span> Logout
+	</a></div>
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+</aside>
+
+  <main class="main-content">
+    <div class="container">
+      <h1>Service Requests</h1>
+      <p class="subtitle">Today's assigned and pending jobs</p>
+
+      <div class="request-filters">
+        <select id="statusFilter">
+          <option>Status: All</option>
+          <option>New</option>
+          <option>Assigned</option>
+          <option>In Progress</option>
+          <option>Completed</option>
+        </select>
+
+        <select id="priorityFilter">
+          <option>Priority: All</option>
+          <option>High</option>
+          <option>Normal</option>
+        </select>
+
+        <select id="applianceFilter">
+          <option>Appliance: All</option>
+          <option>AC</option>
+          <option>Washing Machine</option>
+          <option>Refrigerator</option>
+        </select>
+      </div>
+
+      <div class="request-list"></div>
+    </div>
+	
+  </main>
+<footer>
+        <p>© 2026 ServEase Services</p>
+	</footer>
+</body>
+</html>

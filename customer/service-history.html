@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServEase – Service History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="topbar">
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="logo-text">ServEase</div>
+    <div class="top-icons">
+               <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">
+                <span>Notifications</span>
+                <button class="mark-all-read" onclick="markAllRead()">Mark all read</button>
+            </div>
+            <div class="notification-list" id="notificationList">
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Your service request #123456 has been completed</p>
+                    <small>2 mins ago</small>
+                </div>
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Technician Deepak assigned to your request</p>
+                    <small>30 mins ago</small>
+                </div>
+                <div class="notification-item read" onclick="markAsRead(this)">
+                    <p>Service request #123455 has been scheduled</p>
+                    <small>1 hour ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+
+<!-- Backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu">
+            <ul>  
+		<li><a href="customer_dashboard.html"><span></span> Dashboard</a></li>
+		<li><a href="test.html"><span></span> My Appliances</a></li>
+ 		<li class="active"><a href="service-history.html"><span></span> Service History</a></li>
+                <li><a href="service-request.html"><span></span> Track  Request</a></li>
+               
+		
+
+            </ul>
+        </nav>
+        <div class="logout">
+            <a href="#" onclick="openLogoutModal(); return false;"><span></span> Logout</a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section class="issue-panel">
+
+        <h2 class="page-title">SERVICE HISTORY</h2>
+
+        <div class="search-box">
+            <input id="searchInput" placeholder="Search appliance or service ID...">
+        </div>
+
+        <div class="service-list" id="serviceList"></div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<script src="js/service-history.js"></script>
+</body>
+</html>

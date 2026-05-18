@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+ xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+http://maven.apache.org/xsd/settings-1.0.0.xsd">
+ <pluginGroups/>
+ <localRepository>C:\Users\3207018\.m2\repository</localRepository>
+ <proxies>
+ <proxy>
+ <id>optional</id>
+ <active>true</active>
+ <protocol>http</protocol>
+ <username>3207018</username>
+ <password>AryaTanu@161102</password>
+ <host>proxy.tcs.com</host>
+
+  <port>8080</port>
+ <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+ </proxy>
+ </proxies>
+<servers/>
+ <mirrors/>
+ <profiles/>
+</settings>

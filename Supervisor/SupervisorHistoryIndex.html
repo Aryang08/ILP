@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServEase - History</title>
+    <link rel="stylesheet" href="css/SupervisorHistoryStyle.css">
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+
+        <div class="logo-text" onclick="gotoDashboard()">ServEase</div>
+
+        <div class="top-icons">
+	            
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <nav class="menu">
+                <ul>
+                    <li> Dashboard</li>
+                    <li> Tickets</li>
+                    <li> Technician Allocation</li>
+                    <li class="active"> History</li>
+			<li>Register Technician</li>
+                </ul>
+            </nav>
+
+            <div class="logout"> Logout</div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="history-panel">
+
+
+            <!-- KPI CARDS -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <p>Total Activity</p>
+                    <h3>156</h3>
+                    <span>All Time</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Tickets Assigned</p>
+                    <h3>42</h3>
+                    <span>This Period</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Status Updates</p>
+                    <h3>78</h3>
+                    <span>This Period</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Escalations</p>
+                    <h3>8</h3>
+                    <span>This Period</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Completed</p>
+                    <h3>28</h3>
+                    <span>This Period</span>
+                </div>
+            </div>
+		<!-- FILTERS -->
+           <div class="filters">
+    
+    <select id="statusFilter">
+        <option value="all">All Status</option>
+        <option value="success">Success</option>
+        <option value="updated">Updated</option>
+        <option value="delayed">Delayed</option>
+        <option value="completed">Completed</option>
+    </select>
+
+    <input type="text" id="historySearch" placeholder="Search Ticket ID">
+
+    <div class="date-field">
+        <label>From</label>
+        <input type="date" id="fromDate">
+    </div>
+
+    <div class="date-field">
+        <label>To</label>
+        <input type="date" id="toDate">
+    </div>
+
+    <button id="todayBtn" class="filter-btn">Today</button>
+    <button id="clearDatesBtn" class="filter-btn secondary">Clear</button>
+
+</div>
+
+            <!-- TABLE -->
+            <div class="table-box">
+	<h3>Service History</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Ticket ID</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                            <th>Technician</th>
+                            <th>Result / Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+    <tr>
+        <td data-date="2024-04-24T10:15:00">Apr 24, 2024 10:15 AM</td>
+        <td>SR-10458</td>
+        <td>Ticket Assigned</td>
+        <td>Assigned to Rajesh Kumar</td>
+        <td>Rajesh Kumar</td>
+        <td><span class="badge success">Success</span></td>
+    </tr>
+
+    <tr>
+        <td data-date="2024-04-24T09:45:00">Apr 24, 2024 09:45 AM</td>
+        <td>SR-10649</td>
+        <td>Status Updated</td>
+        <td>Status changed from Pending to In Progress</td>
+        <td>Sunita Raj</td>
+        <td><span class="badge updated">In Progress</span></td>
+    </tr>
+
+    <tr>
+        <td data-date="2024-04-24T11:30:00">Apr 24, 2024 11:30 AM</td>
+        <td>SR-10458</td>
+        <td>Issue Resolved</td>
+        <td>Repair completed successfully</td>
+        <td>Rajesh Kumar</td>
+        <td><span class="badge success">Success</span></td>
+    </tr>
+</tbody>
+                </table>
+
+                <div class="pagination">
+                    <span>Showing 1 to 2 of 3 entries</span>
+
+                    <div class="pages">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>Next</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+ <!-- FOOTER OUTSIDE CONTAINER -->
+    <footer class="footer">
+        <p>© 2026 ServEase Services</p>
+    </footer>
+    </div>
+
+
+
+    <script src="javascript/SupervisorHistory.js"></script>
+</body>
+</html>

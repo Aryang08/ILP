@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set New Password</title>
+    <link rel="stylesheet" href="Upd.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <p>ServEase</p>
+    </div>
+</header>
+
+<main class="login-container">
+    <div class="login-card">
+
+        <div class="user-icon">🔐</div>
+
+        <h1>Set New Password</h1>
+        <p class="subtitle">
+            For better security, please update your password
+        </p>
+
+        <form onsubmit="return validatePasswordForm(event);">
+
+            <!-- OLD PASSWORD -->
+            <div class="input-group">
+                <label>Temporary Password <span class="required">*</span></label>
+                <input type="password" id="oldPassword" placeholder="Enter Temporary password">
+            </div>
+
+            <!-- NEW PASSWORD -->
+            <div class="input-group">
+                <label>New Password <span class="required">*</span></label>
+                <input type="password" id="newPassword" placeholder="Enter new password">
+                <p class="helper-text">
+                    Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character
+                </p>
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="input-group">
+                <label>Confirm Password <span class="required">*</span></label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter new password">
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Update Password
+            </button>
+
+            <p class="error-text" id="message"></p>
+
+        </form>
+
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<script src="Upd.js"></script>
+</body>
+</html>

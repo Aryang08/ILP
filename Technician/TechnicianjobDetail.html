@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technician Job Details</title>
+  <link rel="stylesheet" href="Css/Technician_style.css"/>
+<script src="javascript/backend.js" defer></script>
+</head>
+<body>
+<!-- ================= TOP NAV BAR ================= -->
+<header class="topbar">
+  <button class="hamburger" id="hamburgerBtn">☰</button>
+
+  <div class="logo-text">ServEase</div>
+
+  <div class="top-icons">
+   </div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+  <!--<button class="logo-box">Menu</button>-->
+
+  <nav class="menu">
+    <ul>
+      <li id="Dashboardlink"> Dashboard</li>
+      <li class="active"> My Job</li>
+      <li id="requestListBtn">
+         Requests
+      </li>
+    </ul>
+  </nav>
+
+  <div class="logout"><a href="" onclick="openLogoutModal(); 
+return false;">
+<span></span> Logout
+</a></div>
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+</aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="main-content">
+
+    <div class="container">
+
+      <h1>Technician Job Details & Status Update</h1>
+      <p class="subtitle">
+        Enable technician preparedness and improve first‑time resolution
+      </p>
+
+      <div class="layout">
+
+        <!-- LEFT COLUMN -->
+        <div>
+
+	<div class="box">
+  	<h2>📍 Job Summary</h2>
+  	<div class="content" id="jobAddress"></div>
+	</div>
+          
+	<div class="box">
+  	<h2>🔧 Appliance Details</h2>
+  	<div class="content" id="jobAppliance"></div>
+	</div>
+
+
+          <div class="box">
+            <h2>🕘 Service History Preview</h2>
+            <div class="content" id="customerAddress">
+              Last Service: Gas Refill (Jan 2026)<br />
+              Complaint: Low Cooling<br />
+              Status: Resolved
+            </div>
+          </div>
+
+
+<div class="box">
+  <h2>📡 Current Status</h2>
+  <div class="content" id="applianceDetails"></div>
+</div>
+
+            <div class="empty-state">
+              No tracking available yet.
+            </div>
+          </div>
+
+        <!-- RIGHT COLUMN -->
+        <div>
+	    <div class="box" id="sparePartsBox">
+            <h2>📦 Spare Parts Checklist</h2>
+
+            <label><input type="checkbox" /> Compressor Capacitor</label>
+            <label><input type="checkbox" /> Cooling Fan Motor</label>
+            <label><input type="checkbox" /> Copper Pipe Kit</label>
+
+            <div class="empty-state">
+              No additional spare parts required.
+            </div>
+
+          <div class="box" id="quickActionsBox">
+            <h2>✅ Quick Actions</h2>
+            <div class="btn-row">
+		<button id="initiate">Initiate</button>
+		<button id="startJob">Start Job</button>
+		<!--<button id="reschedule">Reschedule</button> -->
+		<button id="markCompleted">Mark Completed</button>
+            </div>
+          </div>
+
+          <div class="box" id="workNotesBox">
+            <h2>📝 Work Notes<span id="compulsary">*</span></h2>
+            <textarea placeholder="Checked gas pressure, cleaned filter..." required></textarea>
+          </div>
+
+            
+          </div>
+          <button class="submit">Submit Update</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- ================= FOOTER ================= -->
+	<footer>
+        <p>© 2026 ServEase Services</p>
+	</footer>
+
+  </main>
+    
+</body>
+</html>

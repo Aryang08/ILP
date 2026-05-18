@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Role</title>
+    <link rel="stylesheet" href="css/role.css">
+</head>
+<body>
+
+<header class="navbar">
+        <div class="logo">
+  <p> ServEase </p>
+</div>
+    </header>
+
+<main class="page-content">
+    <div class="role-container">
+
+        <h1>Select Login Role</h1>
+        <p>Choose your role to continue</p>
+
+        <div class="role-grid">
+
+            <div class="role-card" onclick="goToPage('login.html')">
+                <h3>Customer</h3>
+            </div>
+
+            <div class="role-card" onclick="goToPage('Tech.html')">
+                <h3>Technician</h3>
+            </div>
+
+            <div class="role-card" onclick="goToPage('supervisorLogin.html')">
+                <h3>Supervisor</h3>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 ServEase Services
+</footer>
+
+<script>
+function goToPage(page) {
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>

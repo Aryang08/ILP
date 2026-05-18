@@ -1,0 +1,112 @@
+:root {
+    --primary: #1d3b6e;
+    --secondary: #2c4f8a;
+    --accent: #1d61d1;
+    --bg: #f4f8ff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #dbe3ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #eef4ff 0%, #f7faff 100%);
+}
+
+/* HEADER */
+.navbar {
+    background: linear-gradient(to right, #2c4f8a, #1d3b6e);;
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== Logo ===== */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white; /* Serv */
+    letter-spacing: 0.5px;
+}
+.logo img {
+    height: 38px;
+}
+
+/* MAIN */
+.page-content {
+    flex: 1; /* ✅ pushes footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* CARD */
+.role-container {
+    width: 100%;
+    max-width: 850px;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    border: 1px solid #edf2f7;
+    text-align: center;
+}
+
+.role-container h1 {
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.role-container p {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+/* GRID */
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.role-card {
+    padding: 28px 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: #f8fbff;
+}
+
+.role-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(29,97,209,0.12);
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 60px;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .role-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServEase - Feedback Analysis</title>
+
+<link rel="stylesheet" href="./css/feedback.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-left">
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <div class="logo">ServEase</div>
+    </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="menu-item" onclick="goNextPage()">Dashboard</div>
+    <div class="menu-item active">Feedback Analysis</div>
+    <div class="logout" onclick="openLogoutPopup()">Logout</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h2>Customer Feedback Analysis</h2>
+
+<!-- FILTER -->
+<div class="filter-box">
+    <select id="ratingFilter" onchange="filterTable()">
+        <option value="all">All Ratings</option>
+        <option value="1">Rating 1</option>
+        <option value="2">Rating 2</option>
+        <option value="3">Rating 3</option>
+        <option value="4">Rating 4</option>
+        <option value="5">Rating 5</option>
+    </select>
+
+
+    <select onchange="sortData(this.value)">
+       <option value="">Sort By</option>
+       <option value="high">Rating High to Low </option>
+       <option value="low">Rating Low to High </option>
+       <option value="quality">Excellent to Bad</option>
+    </select>
+
+</div>
+
+
+
+<!-- TABLE -->
+<div class="table-box">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Rating</th>
+<th>Comment</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody id="feedbackTable"></tbody>
+</table>
+</div>
+
+<!-- GRAPH -->
+<div class="chart-box">
+<canvas id="chart"></canvas>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 ServEase Services</p>
+</footer>
+<div class="logout-popup" id="logoutPopup">
+    <div class="popup-box">
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout?</p>
+
+        <div class="popup-actions">
+            <button class="btn cancel" onclick="closeLogoutPopup()">Cancel</button>
+            <button class="btn confirm" onclick="confirmLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+<script src="./javascript/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServEase – Service Tracking</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/service-request-detail.css">
+    <script src="js/service-request-detail.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+    <button class="hamburger" id="hamburgerBtn">☰</button>
+    <div class="logo-text">ServEase</div>
+    <div class="top-icons">
+               <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">
+                <span>Notifications</span>
+                <button class="mark-all-read" onclick="markAllRead()">Mark all read</button>
+            </div>
+            <div class="notification-list" id="notificationList">
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Your service request #123456 has been completed</p>
+                    <small>2 mins ago</small>
+                </div>
+                <div class="notification-item unread" onclick="markAsRead(this)">
+                    <p>Technician John Doe assigned to your request</p>
+                    <small>30 mins ago</small>
+                </div>
+                <div class="notification-item read" onclick="markAsRead(this)">
+                    <p>Service request #123455 has been scheduled</p>
+                    <small>1 hour ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-content">
+        <h3>Are you sure you want to logout?</h3>
+        <div class="modal-buttons">
+            <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+            <button class="modal-btn confirm" onclick="confirmLogout()">Yes, Logout</button>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<div class="container">
+
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu">
+            <ul>
+             <li><a href="customer_dashboard.html"><span></span>Dashboard</a></li>
+ 		 <li><a href="test.html"><span></span> My Appliances</a></li>
+                <li><a href="service-history.html"><span></span> Service History</a></li>
+		<li class="active"><a href="service-request.html"><span></span> Track Request</a></li>
+              
+
+            </ul>
+        </nav>
+        <div class="logout">
+            <a href="#" onclick="openLogoutModal(); return false;"><span></span> Logout</a>
+        </div>
+    </aside>
+
+    <section class="issue-panel">
+
+        <h2 class="page-title">SERVICE TRACKING</h2>
+
+        <div class="card request-card">
+            <div>
+                <h4>Service Request Header</h4>
+                <p><strong>#123456</strong> Washing Machine</p>
+            </div>
+            <button class="help-btn">Need Help?</button>
+        </div>
+
+        <div class="card">
+            <div class="timeline-header">
+                <h4>SERVICE STATUS | TIMELINE</h4>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-line-active"></div>
+                <div class="timeline-step completed">
+                    <div class="dot">✓</div>
+                    <div class="label">Ticket<br>Created</div>
+                </div>
+                <div class="timeline-step completed">
+                    <div class="dot">✓</div>
+                    <div class="label">Technician<br>Assigned</div>
+                </div>
+                <div class="timeline-step completed">
+                    <div class="dot">✓</div>
+                    <div class="label">Technician<br>On the Way</div>
+                </div>
+                <div class="timeline-step active">
+                    <div class="dot">✓</div>
+                    <div class="label">Service In<br>Progress</div>
+                </div>
+                <div class="timeline-step pending">
+                    <div class="dot">&nbsp;</div>
+                    <div class="label">Completed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h4>Technician Details Card</h4>
+            <div class="tech-row">
+                <div class="avatar"></div>
+                <div class="tech-info">
+                    <strong>Deepak</strong>
+                    <p>Today, 2:00 PM - 4:00 PM</p>
+                </div>
+                <div class="tech-contact">
+                    <p>+91 9987654234</p>
+                    <p>deepak@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h4>Service Update Messages</h4>
+            <div class="update">
+                <span class="update-dot"></span>
+                <p>Technician is on the way</p>
+                <small>5 mins ago</small>
+            </div>
+            <div class="update">
+                <span class="update-dot"></span>
+                <p>Technician assigned: John Doe</p>
+                <small>30 mins ago</small>
+            </div>
+            <div class="assist">
+                <p>Need assistance?</p>
+                <button class="support-btn">Contact Support</button>
+            </div>
+        </div>
+
+        <!-- Review Card - Separate Card -->
+        <div class="card" id="reviewCard">
+            <div class="review-form" id="reviewForm">
+                <h4 style="font-size:16px;font-weight:600;margin-bottom:15px;color:#333;">Rate Your Service</h4>
+                <div class="stars" id="starRating" style="font-size:36px;color:#ffc107;cursor:pointer;margin:10px 0;">
+                    <span onclick="selectStar(1)" style="margin-right:5px;">★</span>
+                    <span onclick="selectStar(2)" style="margin-right:5px;">★</span>
+                    <span onclick="selectStar(3)" style="margin-right:5px;">★</span>
+                    <span onclick="selectStar(4)" style="margin-right:5px;">★</span>
+                    <span onclick="selectStar(5)" style="margin-right:5px;">★</span>
+                </div>
+                <textarea id="reviewText" rows="4" placeholder="Write your experience..." style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;margin:10px 0;resize:none;"></textarea>
+                <p class="error-message" id="reviewError" style="color:#e53935;font-size:13px;display:none;margin:10px 0;">Please select rating and write a valid review.</p>
+                <button onclick="submitReview()" style="background:#2f5fcd;color:white;border:none;padding:12px 24px;border-radius:8px;font-size:14px;cursor:pointer;margin-top:10px;">Submit Review</button>
+            </div>
+            <div class="submitted-review" id="submittedReview" style="display:none;text-align:center;padding:20px;">
+                <h4 style="font-size:18px;color:#28a745;margin-bottom:15px;">Thank you for your review!</h4>
+                <div id="submittedStars" style="font-size:32px;color:#ffc107;margin:10px 0;"></div>
+                <p id="submittedText" style="color:#333;font-size:14px;margin-top:10px;"></p>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 ServEase Services</p>
+</footer>
+
+<div class="billing-overlay hidden" id="billingOverlay" onclick="if(event.target === this) this.classList.add('hidden')">
+    <div class="billing-modal">
+        <h3>Service Billing</h3>
+        <p><strong>Service ID:</strong> <span id="billServiceId"></span></p>
+        <p><strong>Service:</strong> <span id="billServiceName"></span></p>
+        <div class="bill-items">
+            <div><span>Service Charge</span><span>₹500</span></div>
+            <div><span>Spare Parts</span><span>₹300</span></div>
+            <div><span>Tax</span><span>₹90</span></div>
+        </div>
+        <hr>
+        <div class="bill-total">
+            <strong>Total</strong>
+            <strong>₹890</strong>
+        </div>
+        <div class="bill-actions">
+            <button class="pay-btn">Proceed to Pay</button>
+            <button class="close-btn" id="closeBilling" onclick="document.getElementById('billingOverlay').classList.add('hidden')">Close</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

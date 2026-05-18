@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Manager Dashboard</title>
+
+<link rel="stylesheet" href="./css/admin_side.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-left">
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <div class="logo">ServEase</div>
+    </div>
+</div>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar"><! aside and nav>
+    <div class="menu-item active">Dashboard</div>
+    <div class="menu-item" onclick="goNextPage()">Feedback Analysis</div>
+    <div class="menu-item logout" onclick="openLogoutPopup()">Logout</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h2 class="padding_heading">Admin / Service Manager Dashboard</h2>
+
+<!-- CARDS -->
+<div class="cards">
+    <div class="card open">
+        <p class="alpha">Open</p>
+        <div class="number" id="openCount">0</div>
+    </div>
+
+    <div class="card assigned">
+        <p class="alpha">Assigned</p>
+        <div class="number" id="assignedCount">0</div>
+    </div>
+
+    <div class="card delayed">
+        <p class="alpha">Delayed</p>
+        <div class="number" id="delayedCount">0</div>
+    </div>
+</div>
+
+<!-- PANEL -->
+<div class="panel">
+
+<div class="toolbar">
+    <select id="statusFilter">
+        <option>All Status</option>
+        <option>Open</option>
+        <option>Assigned</option>
+        <option>Delayed</option>
+        <option>Completed</option>
+    </select>
+
+    <input type="text" id="searchBox" placeholder="Search request..." />
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Issue</th>
+                <th>Status</th>
+                <th>Technician</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+</div>
+
+<div class="alert">
+⚠ Alerts: Some requests are delayed
+</div>
+
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 ServEase Services</p>
+</footer>
+<div class="logout-popup" id="logoutPopup">
+    <div class="popup-box">
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to logout?</p>
+
+        <div class="popup-actions">
+            <button class="btn cancel" onclick="closeLogoutPopup()">Cancel</button>
+            <button class="btn confirm" onclick="confirmLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+<script src="./javascript/admin_side.js"></script>
+
+</body>
+</html>

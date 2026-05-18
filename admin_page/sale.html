@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServEase Sales</title>
+  <link rel="stylesheet" href="./css/sale.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+    <h3 class="logo">ServEase</h3>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="menu-item active">Add Appliance</div>
+    <div class="spacer"></div>
+   
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+  <div class="card">
+
+    <h3>Appliances Sales Entry</h3>
+
+    <div class="grid">
+      <div>
+        <label>Name *</label>
+        <input id="name" placeholder="Enter customer full name" title="Customer full name">
+      </div>
+
+      <div>
+        <label>Phone *</label>
+        <input id="phone" placeholder="10-digit mobile number" value="+91 " title="Enter valid mobile number">
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input id="email" placeholder="example@mail.com" title="Optional email address">
+      </div>
+
+      <div class="full">
+        <label>Address *</label>
+        <input id="address" placeholder="House no, area, city" title="Customer address">
+      </div>
+
+      <div>
+        <label>Category *</label>
+        <select id="category" title="Select appliance type">
+          <option>Select Appliances</option>
+          <option>AC</option>
+          <option>Fridge</option>
+          <option>Washing Machine</option>
+          <option>TV</option>
+          <option>Microwave</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Brand *</label>
+        <input id="brand" placeholder="Brand name (LG, Samsung…)" title="Appliance brand">
+      </div>
+
+      <div>
+        <label>Model</label>
+        <input id="model" placeholder="Model number" title="Optional model name">
+      </div>
+
+      <div>
+        <label>Serial Number *</label>
+        <input id="serial" placeholder="Serial number from device" title="Unique serial number">
+      </div>
+
+      <div>
+        <label>Amount *</label>
+        <input id="amount" placeholder="Total amount in INR" title="Enter sale amount">
+      </div>
+
+      <div>
+        <label>Date *</label>
+        <input type="date" id="date" title="Purchase date">
+      </div>
+
+      <div class="full">
+        <label>Invoice *</label>
+        <input id="invoice" placeholder="Invoice number / bill ID" title="Invoice reference">
+      </div>
+
+      <div>
+        <label>Warranty *</label>
+        <select title="Standard warranty period">
+          <option>Select</option>
+          <option>+1 year</option>
+          <option>+2 year</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Extended</label>
+        <select id="extended" onchange="toggleExt()" title="Extended warranty option">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- EXTENDED -->
+    <div id="extBox" class="grid hidden">
+      <div>
+        <label>Period</label>
+        <input placeholder="e.g. 6 months" title="Extended warranty duration">
+      </div>
+
+      <div>
+        <label>End Date</label>
+        <input type="date" title="Warranty end date">
+      </div>
+    </div>
+
+    <div class="section">
+      <label>Notes</label>
+      <textarea placeholder="Any additional notes" title="Optional remarks"></textarea>
+    </div>
+
+    <button onclick="openModal()">Save</button>
+
+  </div>
+</div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h4>Confirm Details</h4>
+      <div id="preview"></div>
+      <br>
+      <button onclick="confirmSave()">Confirm</button>
+    </div>
+  </div>
+<footer>
+<p>© 2026 ServEase Services</p>
+</footer>
+
+<div class="logout-popup" id="logoutPopup">
+  <div class="logout-box">
+    <h3>Confirm Logout</h3>
+    <p>Are you sure you want to logout?</p>
+    <div class="btn-row">
+         <button onclick="confirmSave()">Confirm</button>
+         <button onclick="closeLogoutPopup()">Cancel</button>
+    </div
+  </div>
+</div>
+
+
+  <script src="./script/sale.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+package com.tcs.ilp.servease.dto;
+
+import java.util.List;
+
+import jakarta.validation.constraints.*;
+
+public class TechnicianOnboardingDTO {
+
+    @NotBlank(message = "Technician ID is required")
+    private String technicianId;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @Email(message = "Invalid email format")
+    private String email;
+
+    @Pattern(regexp = "\\d{10}", message = "Phone must be 10 digits")
+    private String phone;
+
+    @Size(min = 10, message = "Password must be at least 10 characters")
+    private String password;
+
+    @NotEmpty(message = "At least one skill must be selected")
+    private List<String> skillIds;
+
+    public TechnicianOnboardingDTO() {}
+
+    // =========================
+    // GETTERS & SETTERS
+    // =========================
+
+    public String getTechnicianId() {
+        return technicianId;
+    }
+
+    public void setTechnicianId(String technicianId) {
+        this.technicianId = technicianId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<String> getSkillIds() {
+        return skillIds;
+    }
+
+    public void setSkillIds(List<String> skillIds) {
+        this.skillIds = skillIds;
+    }
+}
