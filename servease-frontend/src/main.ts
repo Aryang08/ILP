@@ -1,13 +1,11 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, RouterOutlet, Routes } from '@angular/router';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { authInterceptor } from './app/core/interceptors/auth.interceptor';
 import { errorInterceptor } from './app/core/interceptors/error.interceptor';
 import { AuthGuard } from './app/core/guards/auth.guard';
 import { RoleGuard } from './app/core/guards/role.guard';
-import { AuthService } from './app/core/services/auth.service';
 import { LoginPageComponent } from './app/pages/login/login.component';
 import { DashboardComponent } from './app/pages/customer-dashboard/dashboard.component';
 import { AdminDashboardComponent } from './app/pages/admin-dashboard/dashboard.component';
@@ -33,4 +31,4 @@ const routes: Routes = [
   { path:'**', redirectTo:'login' }
 ];
 
-bootstrapApplication(AppComponent,{providers:[provideRouter(routes),provideHttpClient(withInterceptors([authInterceptor,errorInterceptor])),FormsModule]});
+bootstrapApplication(AppComponent,{providers:[provideRouter(routes),provideHttpClient(withInterceptors([authInterceptor,errorInterceptor]))]});
